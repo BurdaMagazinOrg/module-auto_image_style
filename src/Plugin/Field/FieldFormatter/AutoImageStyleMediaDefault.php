@@ -45,30 +45,30 @@ class AutoImageStyleMediaDefault extends ImageFormatter {
     $image_styles = image_style_options(FALSE);
     $elements['image_style_portrait'] = [
       '#type' => 'select',
-      '#title' => t('Portrait image style'),
+      '#title' => $this->t('Portrait image style'),
       '#options' => $image_styles,
-      '#empty_option' => t('None (original image)'),
+      '#empty_option' => $this->t('None (original image)'),
       '#default_value' => $this->getSetting('image_style_portrait'),
-      '#description' => t('Select the image style for portrait images'),
+      '#description' => $this->t('Select the image style for portrait images'),
     ];
     $elements['image_style_landscape'] = [
       '#type' => 'select',
-      '#title' => t('Landscape image style'),
+      '#title' => $this->t('Landscape image style'),
       '#options' => $image_styles,
-      '#empty_option' => t('None (original image)'),
+      '#empty_option' => $this->t('None (original image)'),
       '#default_value' => $this->getSetting('image_style_landscape'),
-      '#description' => t('Select the image style for landscape images'),
+      '#description' => $this->t('Select the image style for landscape images'),
     ];
 
     $link_types = [
-      'content' => t('Content'),
-      'file' => t('File'),
+      'content' => $this->t('Content'),
+      'file' => $this->t('File'),
     ];
     $elements['image_link'] = [
-      '#title' => t('Link image to'),
+      '#title' => $this->t('Link image to'),
       '#type' => 'select',
       '#default_value' => $this->getSetting('image_link'),
-      '#empty_option' => t('Nothing'),
+      '#empty_option' => $this->t('Nothing'),
       '#options' => $link_types,
     ];
 
@@ -88,23 +88,23 @@ class AutoImageStyleMediaDefault extends ImageFormatter {
     // their styles in code.
     $image_style_portrait_setting = $this->getSetting('image_style_portrait');
     if (isset($image_styles[$image_style_portrait_setting])) {
-      $summary[] = t('Portrait image style: @style', ['@style' => $image_styles[$image_style_portrait_setting]]);
+      $summary[] = $this->t('Portrait image style: @style', ['@style' => $image_styles[$image_style_portrait_setting]]);
     }
     else {
-      $summary[] = t('Portrait image style: Original image');
+      $summary[] = $this->t('Portrait image style: Original image');
     }
 
     $image_style_landscape_setting = $this->getSetting('image_style_landscape');
     if (isset($image_styles[$image_style_landscape_setting])) {
-      $summary[] = t('Landscape image style: @style', ['@style' => $image_styles[$image_style_landscape_setting]]);
+      $summary[] = $this->t('Landscape image style: @style', ['@style' => $image_styles[$image_style_landscape_setting]]);
     }
     else {
-      $summary[] = t('Landscape image style: Original image');
+      $summary[] = $this->t('Landscape image style: Original image');
     }
 
     $link_types = [
-      'content' => t('Linked to content'),
-      'file' => t('Linked to file'),
+      'content' => $this->t('Linked to content'),
+      'file' => $this->t('Linked to file'),
     ];
     // Display this setting only if image is linked.
     if (isset($link_types[$this->getSetting('image_link')])) {

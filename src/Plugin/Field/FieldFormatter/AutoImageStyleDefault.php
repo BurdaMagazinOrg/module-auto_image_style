@@ -37,19 +37,19 @@ class AutoImageStyleDefault extends ImageFormatter {
     $image_styles = image_style_options(FALSE);
     $elements['image_style_portrait'] = array(
       '#type' => 'select',
-      '#title' => t('Portrait image style'),
+      '#title' => $this->t('Portrait image style'),
       '#options' => $image_styles,
-      '#empty_option' => t('None (original image)'),
+      '#empty_option' => $this->t('None (original image)'),
       '#default_value' => $this->getSetting('image_style_portrait'),
-      '#description' => t('Select the image style for portrait images'),
+      '#description' => $this->t('Select the image style for portrait images'),
     );
     $elements['image_style_landscape'] = array(
       '#type' => 'select',
-      '#title' => t('Landscape image style'),
+      '#title' => $this->t('Landscape image style'),
       '#options' => $image_styles,
-      '#empty_option' => t('None (original image)'),
+      '#empty_option' => $this->t('None (original image)'),
       '#default_value' => $this->getSetting('image_style_landscape'),
-      '#description' => t('Select the image style for landscape images'),
+      '#description' => $this->t('Select the image style for landscape images'),
     );
     return $elements;
   }
@@ -67,18 +67,18 @@ class AutoImageStyleDefault extends ImageFormatter {
     // their styles in code.
     $image_style_portrait_setting = $this->getSetting('image_style_portrait');
     if (isset($image_styles[$image_style_portrait_setting])) {
-      $summary[] = t('Portrait image style: @style', array('@style' => $image_styles[$image_style_portrait_setting]));
+      $summary[] = $this->t('Portrait image style: @style', array('@style' => $image_styles[$image_style_portrait_setting]));
     }
     else {
-      $summary[] = t('Portrait image style: Original image');
+      $summary[] = $this->t('Portrait image style: Original image');
     }
 
     $image_style_landscape_setting = $this->getSetting('image_style_landscape');
     if (isset($image_styles[$image_style_landscape_setting])) {
-      $summary[] = t('Landscape image style: @style', array('@style' => $image_styles[$image_style_landscape_setting]));
+      $summary[] = $this->t('Landscape image style: @style', array('@style' => $image_styles[$image_style_landscape_setting]));
     }
     else {
-      $summary[] = t('Landscape image style: Original image');
+      $summary[] = $this->t('Landscape image style: Original image');
     }
 
     return $summary;

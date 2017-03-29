@@ -54,30 +54,30 @@ class AutoImageStyleMediaResponsive extends ResponsiveImageFormatter {
 
     $elements['responsive_image_style_landscape'] = [
       '#type' => 'select',
-      '#title' => t('Responsive landscape image style'),
+      '#title' => $this->t('Responsive landscape image style'),
       '#options' => $responsive_image_options,
-      '#empty_option' => t('None (original image)'),
+      '#empty_option' => $this->t('None (original image)'),
       '#default_value' => $this->getSetting('responsive_image_style_landscape'),
-      '#description' => t('Select the responsive image style for landscape images'),
+      '#description' => $this->t('Select the responsive image style for landscape images'),
     ];
     $elements['responsive_image_style_portrait'] = [
       '#type' => 'select',
-      '#title' => t('Responsive portrait image style'),
+      '#title' => $this->t('Responsive portrait image style'),
       '#options' => $responsive_image_options,
-      '#empty_option' => t('None (original image)'),
+      '#empty_option' => $this->t('None (original image)'),
       '#default_value' => $this->getSetting('responsive_image_style_portrait'),
-      '#description' => t('Select the responsive image style for portrait images'),
+      '#description' => $this->t('Select the responsive image style for portrait images'),
     ];
 
     $link_types = [
-      'content' => t('Content'),
-      'file' => t('File'),
+      'content' => $this->t('Content'),
+      'file' => $this->t('File'),
     ];
     $elements['image_link'] = [
-      '#title' => t('Link image to'),
+      '#title' => $this->t('Link image to'),
       '#type' => 'select',
       '#default_value' => $this->getSetting('image_link'),
-      '#empty_option' => t('Nothing'),
+      '#empty_option' => $this->t('Nothing'),
       '#options' => $link_types,
     ];
 
@@ -92,23 +92,23 @@ class AutoImageStyleMediaResponsive extends ResponsiveImageFormatter {
 
     $responsive_landscape_image_style = $this->responsiveImageStyleStorage->load($this->getSetting('responsive_image_style_landscape'));
     if ($responsive_landscape_image_style) {
-      $summary[] = t('Responsive landscape image style: @responsive_image_style', ['@responsive_image_style' => $responsive_landscape_image_style->label()]);
+      $summary[] = $this->t('Responsive landscape image style: @responsive_image_style', ['@responsive_image_style' => $responsive_landscape_image_style->label()]);
     }
     else {
-      $summary[] = t('Select a responsive landscape image style.');
+      $summary[] = $this->t('Select a responsive landscape image style.');
     }
 
     $responsive_portrait_image_style = $this->responsiveImageStyleStorage->load($this->getSetting('responsive_image_style_portrait'));
     if ($responsive_portrait_image_style) {
-      $summary[] = t('Responsive portrait image style: @responsive_image_style', ['@responsive_image_style' => $responsive_portrait_image_style->label()]);
+      $summary[] = $this->t('Responsive portrait image style: @responsive_image_style', ['@responsive_image_style' => $responsive_portrait_image_style->label()]);
     }
     else {
-      $summary[] = t('Select a responsive portrait image style.');
+      $summary[] = $this->t('Select a responsive portrait image style.');
     }
 
     $link_types = [
-      'content' => t('Linked to content'),
-      'file' => t('Linked to file'),
+      'content' => $this->t('Linked to content'),
+      'file' => $this->t('Linked to file'),
     ];
     // Display this setting only if image is linked.
     if (isset($link_types[$this->getSetting('image_link')])) {
