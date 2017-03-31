@@ -11,7 +11,7 @@ use Drupal\image\Entity\ImageStyle;
  * Resizes an image resource.
  *
  * @ImageEffect(
- *   id = "auto_image_style_thunder_auto_aspect",
+ *   id = "auto_image_style_auto_aspect",
  *   label = @Translation("Auto Aspect"),
  *   description = @Translation("Use different effects depending on whether the image is landscape of portrait shaped. This re-uses other preset definitions, and just chooses between them based on the rule.")
  * )
