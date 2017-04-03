@@ -6,6 +6,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Image\ImageInterface;
 use Drupal\image\ConfigurableImageEffectBase;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\image\ImageEffectInterface;
 
 /**
  * Resizes an image resource.
