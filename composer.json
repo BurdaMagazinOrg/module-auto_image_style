@@ -3,5 +3,5 @@
   "type": "drupal-module",
   "description": "D8 port of the Auto image style module.", 
   "license": "GPL-2.0+",
-  "minimum-stability": "dev",
+  "minimum-stability": "dev"
 }
